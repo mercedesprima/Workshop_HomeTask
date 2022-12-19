@@ -16,9 +16,3 @@ if (number >= 100 && number < 1000)
 }
 else
     Console.WriteLine("Третьей цифры нет");
-
-// Console.WriteLine(BothMultiple (number, 7, 23) ? "Да" : "Нет");
-// bool BothMultiple(int num, int num1 = 7, int num2 = 23)
-// {
-//         return num % num1 == 0 && num % num2 == 0;
-// }
