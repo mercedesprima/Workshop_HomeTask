@@ -14,5 +14,10 @@ if (number >= 100 && number < 1000)
     int thirdDigit = number % 10;
     Console.WriteLine(thirdDigit);
 }
+// else if (number >= -999 && number <= -100)
+// {
+//     int thirdDigit = number % -10;
+//     Console.WriteLine(thirdDigit);
+// }
 else
     Console.WriteLine("Третьей цифры нет");
