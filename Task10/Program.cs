@@ -5,7 +5,7 @@
 // 782 -> 8
 // 918 -> 1
 
-Console.Write("Введите трёхзнаяное число: ");
+Console.Write("Введите трёхзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 // int number = new Random().Next(100,1000);
