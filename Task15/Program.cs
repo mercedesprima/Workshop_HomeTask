@@ -15,6 +15,7 @@
 //     Console.Write(" Да");
 // }
 // else Console.Write("Не существует такого дня недели");
+
 Console.Write("Введите номер дня недели от 1 до 7   ");
 int num = int.Parse(Console.ReadLine());
 if (num >= 1 && num <= 5)
