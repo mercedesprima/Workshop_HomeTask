@@ -21,12 +21,12 @@ int CountNumbers(int digit)
     }
     return count;
 }
+
 void SumNumbers(int n, int len)
 {
     int sum = 0;
     for (int i = 1; i <= len; i++)
     {
-        // sum += n % 10;
         sum = sum + n % 10;
         n = n/10;
     }
