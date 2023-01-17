@@ -16,6 +16,7 @@ int[] CreateArray(int size)
     }
     return arr;
 }
+
 void PrintArray(int[] arr)
 {
     Console.Write("[");
@@ -26,7 +27,3 @@ void PrintArray(int[] arr)
     }
     Console.WriteLine("]");
 }
-// void PrintArray(int[] arr)
-// {
-//     Console.Write($"[{arr[0]}, {arr[1]}, {arr[2]}, {arr[3]}, {arr[4]}, {arr[5]}, {arr[6]}, {arr[7]}]");
-// }
