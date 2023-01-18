@@ -21,18 +21,38 @@ Console.Write("Введите целое число A: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите натуральное число B: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
+int result = 1;
+ToDegree(numberA, numberB);
 
 if (numberB > 0)
-{
-ToDegree(numberA, numberB);
-void ToDegree(int numA, int numB)
-{
-    int result = 1;
-    for (int i = 1; i <= numB; i++)
-    {
-        result = result * numA;
-    }
-    Console.WriteLine($"{numberA} в степени {numberB} = " + result);
-}
-}
+Console.WriteLine($"{numberA} в степени {numberB} = " + result);
 else Console.Write($"Число {numberB} ненатуральное");
+
+void ToDegree(int numberA, int numberB)
+{
+    if (numberB > 0)
+        for (int i = 1; i <= numberB; i++)
+        {
+            result = result * numberA;
+        }
+}
+
+// Console.Write("Введите целое число A: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите натуральное число B: ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+
+// if (numberB > 0)
+// {
+// ToDegree(numberA, numberB);
+// void ToDegree(int numA, int numB)
+// {
+//     int result = 1;
+//     for (int i = 1; i <= numB; i++)
+//     {
+//         result = result * numA;
+//     }
+//     Console.WriteLine($"{numberA} в степени {numberB} = " + result);
+// }
+// }
+// else Console.Write($"Число {numberB} ненатуральное");
