@@ -6,6 +6,7 @@ int[] array = CreateArrayRndInt(6, 100, 1000);
 PrintArray(array);
 int evenNumbers = EvenNumbers(array);
 // Console.Write($"Количество чётных чисел в массиве -> {evenNumbers} ");
+Console.Write($" -> {evenNumbers}");
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
@@ -41,4 +42,4 @@ void PrintArray(int[] arr)
     }
     Console.Write("]");
 }
-Console.Write($" -> {evenNumbers}");
+// Console.Write($" -> {evenNumbers}");
