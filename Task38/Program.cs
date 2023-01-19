@@ -4,6 +4,14 @@
 
 double[] arr = CreateArrayRndDouble(6, -50.0, 50.0);
 PrintArrayDouble(arr);
+double maxArr = MaxArr(arr);
+double minArr = MinArr(arr);
+double result = DiffMaxMin(maxArr, minArr);
+
+
+Console.WriteLine($"Максимальное число: {maxArr}");
+Console.WriteLine($"Минимальное число: {minArr}");
+Console.WriteLine($"Разница между максимальным и минимальным числами: {maxArr - minArr}");
 
 double[] CreateArrayRndDouble(int size, double min, double max)
 {
@@ -17,25 +25,40 @@ double[] CreateArrayRndDouble(int size, double min, double max)
     return arr;
 }
 
-double max = 0;
-for (int i = 0; i < arr.Length; i++)
+double MaxArr(double[] arr)
 {
-    if (arr[i] > max)
+    double maxArr = arr[0];
+    for (int i = 0; i < arr.Length; i++)
     {
-        max = arr[i];
+        if (arr[i] > maxArr)
+        {
+            maxArr = arr[i];
+        }
     }
+    return maxArr;
 }
 
-double min = 0;
-for (int i = 0; i < arr.Length; i++)
+double MinArr(double[] arr)
 {
-    if (arr[i] < min)
+    double minArr = arr[0];
+    for (int i = 0; i < arr.Length; i++)
     {
-        min = arr[i];
+        if (arr[i] < minArr)
+        {
+            minArr = arr[i];
+        }
     }
+    return minArr;
 }
+
+double DiffMaxMin(double min, double max)
+{
 double result = 0;
-result = max - min;
+result = maxArr - minArr;
+result = Math.Round(result, 1);
+return result;
+}
+
 
 void PrintArrayDouble(double[] arr)
 {
@@ -47,6 +70,3 @@ void PrintArrayDouble(double[] arr)
     }
     Console.WriteLine("]");
 }
-Console.WriteLine($"Минимальное число: {min}");
-Console.WriteLine($"Минимальное число: {max}");
-Console.WriteLine($"Разница между максимальным и минимальным числами: {result}");
