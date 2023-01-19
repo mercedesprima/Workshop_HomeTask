@@ -8,6 +8,7 @@ int[] array = CreateArrayRndInt(6, -50, 50);
 PrintArray(array);
 int count = SumOddNumbersIndex(array);
 // Console.Write($"Сумма элементов, стоящих на нечётных позициях в массиве -> {count} ");
+Console.Write($" -> {count}");
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
@@ -40,4 +41,3 @@ void PrintArray(int[] arr)
     }
     Console.Write("]");
 }
-Console.Write($" -> {count}");
