@@ -5,7 +5,9 @@
 
 int[] array = CreateArray(8);
 PrintArray(array);
-
+Console.Write($" -> [");
+PrintArray(array);
+Console.Write($"]");
 int[] CreateArray(int size)
 {
     int[] arr = new int[size];
@@ -20,15 +22,6 @@ void PrintArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write(arr[i] + ", ");
-        else Console.Write(arr[i]);
+    Console.Write(i < arr.Length -1 ? arr[i] + ", " : arr[i]);
     }
-    Console.Write(" -> ");
-    Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (i < arr.Length - 1) Console.Write(arr[i] + ", ");
-        else Console.Write(arr[i]);
-    }
-    Console.Write("]");
 }
