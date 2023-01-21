@@ -8,8 +8,7 @@
 Console.Write("Введите число:  ");
 int number = Convert.ToInt32(Console.ReadLine());
 int len = number.ToString().Length;
-int sum = 0;
-SumNumbers(number, len); 
+int sum = SumNumbers(number, len); 
 Console.WriteLine($"Cумма цифр введенного числа:  {sum}");
 
 // int CountNumbers(int digit)
@@ -24,12 +23,13 @@ Console.WriteLine($"Cумма цифр введенного числа:  {sum}")
 //     return count;
 // }
 
-void SumNumbers(int n, int len)
+int SumNumbers(int n, int len)
 {
-    // int sum = 0;
+    int sum = 0;
     for (int i = 1; i <= len; i++)
     {
         sum = sum + n % 10;
         n = n/10;
     } 
+    return sum;
 }
