@@ -21,20 +21,21 @@ Console.Write("Введите целое число A: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите натуральное число B: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
-int result = 1;
-ToDegree(numberA, numberB);
+int result = ToDegree(numberA, numberB);
 
 if (numberB > 0)
 Console.WriteLine($"{numberA} в степени {numberB} = " + result);
 else Console.Write($"Число {numberB} ненатуральное");
 
-void ToDegree(int numberA, int numberB)
+int ToDegree(int numberA, int numberB)
 {
+    int result = 1;
     if (numberB > 0)
         for (int i = 1; i <= numberB; i++)
         {
             result = result * numberA;
         }
+        return result;
 }
 
 // Console.Write("Введите целое число A: ");
