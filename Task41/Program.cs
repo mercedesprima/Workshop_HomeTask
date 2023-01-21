@@ -8,13 +8,13 @@ int[] arrayM = new int[sizeM];
 FillArray(arrayM);
 int count = CountPositiveNumbers(arrayM);
 PrintArray(arrayM);
-Console.WriteLine($" ->   {count}");
+Console.WriteLine($" -> 1{count}");
 
 int[] FillArray(int[] arr)
 {
     for (int i = 0; i < sizeM; i++)
     {
-        Console.Write($"Введите число {i + 1}:  ");
+        Console.Write($"Введите целое число {i + 1}:  ");
         int number = Convert.ToInt32(Console.ReadLine());
         arr[i] = number;
     }
