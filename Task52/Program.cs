@@ -32,12 +32,13 @@ double[] ArithmeticMeanArray(int[,] matrix)
     double sumColumn = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
+        sumColumn = 0;
         for (int j = 0; j < matrix.GetLength(0); j++)
         {
             sumColumn += matrix[j, i];
         }
         avgArray[i] = sumColumn / matrix.GetLength(0);
-        avgArray[i]= Math.Round(avgArray[i], 1);
+        avgArray[i] = Math.Round(avgArray[i], 1);
     }
     return avgArray;
 }
