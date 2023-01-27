@@ -11,12 +11,16 @@ int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите номер столбца:  ");
 int column = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrix = CreateMatrixRndInt(8, 7, 1, 50);
-PrintMatrix(matrix);
+if (row > 0 && column > 0)
+{
+    int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
+    PrintMatrix(matrix);
 
-if (row <= matrix.GetLength(0) + 1 && column <= matrix.GetLength(1) + 1)
-    Console.WriteLine($"строка {row}, столбец {column} -> {matrix[row - 1, column - 1]}");
-else Console.WriteLine("Такого элемента в массиве нет");
+    if (row <= matrix.GetLength(0) + 1 && column <= matrix.GetLength(1) + 1)
+        Console.WriteLine($"строка {row}, столбец {column} -> {matrix[row - 1, column - 1]}");
+    else Console.WriteLine("Такого элемента в массиве нет");
+}
+else Console.WriteLine("И номер строки, и номер столбца должны быть больше 0.");
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
