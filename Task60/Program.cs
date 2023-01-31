@@ -14,8 +14,8 @@ int Z = Convert.ToInt32(Console.ReadLine());
 int[,,] array3D = new int[X, Y, Z];
 Console.WriteLine();
 
-// if ((X * Y * Z) < -89)
-if ((X * Y * Z) > 89)
+// if ((X * Y * Z) < -90)
+if ((X * Y * Z) > 90)
 {
     Console.WriteLine("Невозможно заполнить массив неповторяющимися двузначными числами. Измените размер массива.");
     return;
