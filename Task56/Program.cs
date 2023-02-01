@@ -51,7 +51,7 @@ void MinSumRow(int[,] matrix)
         {
             sum += matrix[i, j];
         }
-        Console.WriteLine($"Сумма {i + 1} строки: {sum}");
+        // Console.WriteLine($"Сумма {i + 1} строки: {sum}");
         if (i == 0)
         {
             minsum = sum;
