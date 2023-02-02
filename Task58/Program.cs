@@ -8,7 +8,7 @@
 // Матрицу P можно умножить на матрицу K только в том случае, 
 // если число столбцов матрицы P равняется числу строк матрицы K. Матрицы, 
 // для которых данное условие не выполняется, умножать нельзя. 
-         // Вариант 1. Матрицы заданных размеров. 
+// Вариант 1. Матрицы заданных размеров. 
 // int[,] matrixP = CreateMatrixPRndInt(4, 3, -15, 15);
 // PrintMatrix(matrixP);
 // Console.WriteLine();
@@ -75,54 +75,46 @@
 //     return resultMatrix;
 // }
 
-                            // Вариант 2. Пользовательский ввод размеров матрицы. 
+// Вариант 2. Пользовательский ввод размеров матрицы. 
 
 Console.Write("Введите число строк для 1-й матрицы:  ");
 int row1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число столбцов для 1-й матрицы:  ");
 int column1 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите число строк для 2-й матрицы:  "); Использую правило перемножения матриц. 
-// int row2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число строк для 2-й матрицы:  ");
+int row2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число столбцов для 2-й матрицы:  ");
 int column2 = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrixP = CreateMatrixPRndInt(row1, column1);
+int[,] matrixP = CreateMatrixRndInt(row1, column1);
 PrintMatrix(matrixP);
 Console.WriteLine();
-int[,] matrixK = CreateMatrixKRndInt(column1, column2);
+int[,] matrixK = CreateMatrixRndInt(row2, column2);
 PrintMatrix(matrixK);
- Console.WriteLine();
-int[,] resultMatrix = ResultMatrix(matrixP.GetLength(0), matrixK.GetLength(1));
-PrintMatrix(resultMatrix);
+Console.WriteLine();
 
-int[,] CreateMatrixPRndInt(int row1, int column1)
+if (matrixP.GetLength(1) == matrixK.GetLength(0))
 {
-    int[,] matrixP = new int[row1, column1];
+    int[,] resultMatrix = ResultMatrix(matrixP, matrixK);
+    PrintMatrix(resultMatrix);
+}
+else Console.WriteLine("Произведение двух матриц выполнить нельзя ");
+
+int[,] CreateMatrixRndInt(int rows, int columns)
+{
+    int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
-    for (int i = 0; i < matrixP.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrixP.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrixP[i, j] = rnd.Next(-10, 10 + 1);
+            matrix[i, j] = rnd.Next(-10, 10 + 1);
         }
     }
-    return matrixP;
-}
-int[,] CreateMatrixKRndInt(int column1, int column2)
-{
-    int[,] matrixK = new int[column1, column2];
-    Random rnd = new Random();
-    for (int i = 0; i < matrixK.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrixK.GetLength(1); j++)
-        {
-            matrixK[i, j] = rnd.Next(-10, 10 + 1);
-        }
-    }
-    return matrixK;
+    return matrix;
 }
 
- void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -135,9 +127,9 @@ int[,] CreateMatrixKRndInt(int column1, int column2)
     }
 }
 
-int[,] ResultMatrix(int rows, int columns)
+int[,] ResultMatrix(int[,] matrixP, int[,] matrixK)
 {
-    int[,] resultMatrix = new int[rows, columns];
+    int[,] resultMatrix = new int[matrixP.GetLength(0), matrixK.GetLength(1)];
     for (int i = 0; i < matrixP.GetLength(0); i++)
     {
         for (int j = 0; j < matrixK.GetLength(1); j++)
