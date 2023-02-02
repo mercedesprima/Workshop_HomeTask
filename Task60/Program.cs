@@ -4,27 +4,27 @@
 // 66(0,0,0) 27(0,0,1) 25(0,1,0) 90(0,1,1)
 // 34(1,0,0) 26(1,0,1) 41(1,1,0) 55(1,1,1)
 
-Console.Write("Введите размер X :");
-int X = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите размер Y :");
-int Y = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите размер Z :");
-int Z = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите размер x :");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите размер y :");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите размер z :");
+int z = Convert.ToInt32(Console.ReadLine());
 
-int[,,] array3D = new int[X, Y, Z];
+int[,,] array3D = new int[x, y, z];
 Console.WriteLine();
 
-// if ((X * Y * Z) < -90)
-if ((X * Y * Z) > 90)
+// if ((x * y * z) < -90)
+if ((x * y * z) > 90)
 {
     Console.WriteLine("Невозможно заполнить массив неповторяющимися двузначными числами. Измените размер массива.");
     return;
 }
-CreateArray3D(array3D, X, Y, Z);
+CreateArray3D(array3D, x, y, z);
 Console.WriteLine();
 PrintArray3D(array3D);
 
-int[,,] CreateArray3D(int[,,] array, int X, int Y, int Z)
+int[,,] CreateArray3D(int[,,] array, int x, int y, int z)
 {
     int numbers = 10;
     // int numbers = - 10;
@@ -53,7 +53,6 @@ void PrintArray3D(int[,,] array)
             {
                 Console.Write($"{array[i, j, k]}[{i},{j},{k}] ");
             }
-            Console.WriteLine();
         }
         Console.WriteLine();
     }
