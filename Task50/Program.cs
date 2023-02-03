@@ -15,7 +15,6 @@ if (row > 0 && column > 0)
 {
     int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
     PrintMatrix(matrix);
-
     if (row <= matrix.GetLength(0) + 1 && column <= matrix.GetLength(1) + 1)
         Console.WriteLine($"строка {row}, столбец {column} -> {matrix[row - 1, column - 1]}");
     else Console.WriteLine("Такого элемента в массиве нет");
