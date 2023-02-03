@@ -10,7 +10,6 @@ double[,] CreateMatrixRndDouble(int rows, int columns, double min, double max)
 {
     double[,] matrix = new double[rows, columns];
     Random rnd = new Random();
-
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -21,7 +20,6 @@ double[,] CreateMatrixRndDouble(int rows, int columns, double min, double max)
     }
     return matrix;
 }
-
 
 void PrintMatrix(double[,] matrix)
 {
@@ -38,4 +36,3 @@ void PrintMatrix(double[,] matrix)
 
 double[,] array2D = CreateMatrixRndDouble(3, 4, 1, 10);
 PrintMatrix(array2D);
-Console.WriteLine();
